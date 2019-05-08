@@ -12,7 +12,7 @@ Guide assumes Debian-based Linux
 1. Install mod_auth_mellon package
 > ``apt-get install mod_auth_mellon ``
 
-2. Create metadata for Icinga ServiceProvider with mellon_create_metadata.sh:
+2. Create metadata for Icinga ServiceProvider with mellon_create_metadata.sh (https://icinga2.example.com/icinga2 is the SP IdentityID and full URL to MellonEndpointPath is used for https://icinga2.example.com/mellon):
 > ``mellon_create_metadata https://icinga2.example.com/icinga2 https://icinga2.example.com/mellon``
 
 3. Adjust parameters in index.php, adfs.conf
@@ -34,8 +34,8 @@ Add http://schemas_microsoft_com/ws/2008/06/identity/claims/role claim
 9. ADFS: Add following to SP metadata before: </SPSSODescriptor> tag
 > ``<NameIDFormat>urn:oasis:names:tc:SAML:1.1:nameid-format:unspecified</NameIDFormat>``
 
-10. Exchange metadata with SAML (ADFS)
- > ADFS metadata path example: https://fs.example.com/federationmetadata/2007-06/FederationMetadata.xml
+10. Exchange metadata with SAML (ADFS) Generated xml from mellon_create_metadata.sh to IdP and FederationMetadata.xml from IdP to you.
+>> ADFS metadata path example: https://fs.example.com/federationmetadata/2007-06/FederationMetadata.xml
 
 11. Place IdP metadata (obtained from ADFS) in /etc/apache2/mellon/idp-metadata.xml
 
