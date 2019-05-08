@@ -12,7 +12,7 @@ Limitation: No other roles will be automatically be applied. Group ID must be nu
 Guide assumes Debian-based Linux
 
 1. Install mod_auth_mellon package
-> ``apt-get install mod_auth_mellon``
+>  ``apt-get install mod_auth_mellon``
 
 2. Create metadata for Icinga ServiceProvider with mellon_create_metadata.sh (https://icinga2.example.com/icinga2 is the SP IdentityID and full URL to MellonEndpointPath is used for https://icinga2.example.com/mellon):
 > ``mellon_create_metadata https://icinga2.example.com/icinga2 https://icinga2.example.com/mellon``
