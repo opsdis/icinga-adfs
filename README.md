@@ -13,7 +13,7 @@ Guide assumes Debian-based Linux
 > ``apt-get install mod_auth_mellon ``
 
 2. Create metadata for Icinga ServiceProvider with mellon_create_metadata.sh:
-> ``mellon_create_metadata icinga2 https://icinga2.example.com/mellon``
+> ``mellon_create_metadata https://icinga2.example.com/icinga2 https://icinga2.example.com/mellon``
 
 3. Adjust parameters in index.php, adfs.conf
 
