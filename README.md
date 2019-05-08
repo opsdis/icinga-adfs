@@ -35,6 +35,7 @@ Add http://schemas_microsoft_com/ws/2008/06/identity/claims/role claim
 > ``<NameIDFormat>urn:oasis:names:tc:SAML:1.1:nameid-format:unspecified</NameIDFormat>``
 
 10. Exchange metadata with SAML (ADFS)
+ > ADFS metadata path example: https://fs.example.com/federationmetadata/2007-06/FederationMetadata.xml
 
 11. Place IdP metadata (obtained from ADFS) in /etc/apache2/mellon/idp-metadata.xml
 
