@@ -2,6 +2,8 @@
 
 External authentication backend for Icinga that uses SAML (ADFS)
 
+Users with Admin role claim from ADFS will be assigned to group 1 in Icinga
+
 ##Requirements: mod_auth_mellon
 
 ##Installation: 
@@ -24,17 +26,22 @@ Guide assumes Debian-based Linux
 6. Place adfs.conf in /etc/apache2/sites-enabled/
 > ``cp adfs.conf /etc/apache2/sites-enabled/``
 
-7. ADFS: Establish Relying Party Trust in ADFS
+7. Edit index.php and change group id that admins will be assigned to and database credentials
 
-8. ADFS: Add following to SP metadata before: </SPSSODescriptor> tag
+8. ADFS: Establish Relying Party Trust in ADFS
+
+9. ADFS: Add following to SP metadata before: </SPSSODescriptor> tag
 > ``<NameIDFormat>urn:oasis:names:tc:SAML:1.1:nameid-format:unspecified</NameIDFormat>``
 
-9. Exchange metadata with SAML (ADFS)
+10. Exchange metadata with SAML (ADFS)
 
-10. Place IdP metadata (obtained from ADFS) in /etc/apache2/mellon/idp-metadata.xml
+11. Place IdP metadata (obtained from ADFS) in /etc/apache2/mellon/idp-metadata.xml
 
-11. Test Apache config:
+12. Test Apache config:
 > ``apachectl configtest``
 
-12. Restart Apache after successful test
+13. Restart Apache after successful test
 > ``systemctl restart apache2``
+
+
+Reference: https://www.techsupportpk.com/2018/05/single-sign-on-apache-windows-adfs-rhel-centos.html
