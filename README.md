@@ -29,6 +29,7 @@ Guide assumes Debian-based Linux
 7. Edit index.php and change group id that admins will be assigned to and database credentials
 
 8. ADFS: Establish Relying Party Trust in ADFS
+Add http://schemas_microsoft_com/ws/2008/06/identity/claims/role claim
 
 9. ADFS: Add following to SP metadata before: </SPSSODescriptor> tag
 > ``<NameIDFormat>urn:oasis:names:tc:SAML:1.1:nameid-format:unspecified</NameIDFormat>``
