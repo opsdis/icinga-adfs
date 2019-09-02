@@ -11,11 +11,13 @@ Limitation: No other roles will be automatically be applied. Group ID must be nu
 ## Installation: 
 Guide assumes Debian-based Linux
 
-1. Install mod_auth_mellon package
-
-> ``apt-get install mod_auth_mellon``
+1. Compile and install mod_auth_mellon package (https://github.com/Uninett/mod_auth_mellon/releases/tag/v0.14.2)
 
 2. Create metadata for Icinga ServiceProvider with mellon_create_metadata.sh (https://icinga2.example.com/icinga2 is the SP IdentityID and full URL to MellonEndpointPath is used for https://icinga2.example.com/mellon):
+
+> ``wget https://github.com/Uninett/mod_auth_mellon/blob/master/mellon_create_metadata.sh``
+
+> ``chmod +x mellon_create_metadata``
 
 > ``mellon_create_metadata https://icinga2.example.com/icinga2 https://icinga2.example.com/mellon``
 
@@ -33,7 +35,7 @@ Guide assumes Debian-based Linux
 
 > ``cp adfs.conf /etc/apache2/sites-enabled/``
 
-7. Edit index.php and change group id that admins will be assigned to and database credentials
+7. Edit index.php and change group id that admins will be assigned to and database credentials under $mapping.
 
 8. ADFS: Establish Relying Party Trust in ADFS
 
