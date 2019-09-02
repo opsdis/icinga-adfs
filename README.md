@@ -2,10 +2,6 @@
 
 External authentication backend for Icinga that uses SAML (ADFS)
 
-Users with Admin role claim from ADFS will be assigned to group 1 in Icinga
-
-Limitation: No other roles will be automatically be applied. Group ID must be numeric.
-
 ## Requirements: mod_auth_mellon
 
 ## Installation: 
