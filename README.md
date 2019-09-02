@@ -21,29 +21,31 @@ Guide assumes Debian-based Linux
 
 > ``mellon_create_metadata https://icinga2.example.com/icinga2 https://icinga2.example.com/mellon``
 
-3. Adjust parameters in index.php, adfs.conf
+3. ADFS: Add following to SP metadata xml before the </SPSSODescriptor> tag
 
-4. Place authentication.ini in /etc/icingaweb2/
+> ``<NameIDFormat>urn:oasis:names:tc:SAML:1.1:nameid-format:unspecified</NameIDFormat>``
 
-> ``cp authentication /etc/icingaweb2/``
+4. Adjust parameters in index.php, adfs.conf
 
-5. Place index.php in /var/www/html/login:
+5. Place authentication.ini in /etc/icingaweb2/
+
+> ``cp authentication.ini /etc/icingaweb2/``
+
+6. Place index.php in /var/www/html/login:
 
 > ``cp index.php /var/www/html/login/``
 
-6. Place adfs.conf in /etc/apache2/sites-enabled/
+7. Place adfs.conf in /etc/apache2/sites-enabled/
 
 > ``cp adfs.conf /etc/apache2/sites-enabled/``
 
-7. Edit index.php and change group id that admins will be assigned to and database credentials under $mapping.
+8. Edit index.php and change group id that admins will be assigned to and database credentials under $mapping.
 
-8. ADFS: Establish Relying Party Trust in ADFS
+9. ADFS: Establish Relying Party Trust in ADFS
 
 Add http://schemas_microsoft_com/ws/2008/06/identity/claims/role claim
 
-9. ADFS: Add following to SP metadata before: </SPSSODescriptor> tag
-
-> ``<NameIDFormat>urn:oasis:names:tc:SAML:1.1:nameid-format:unspecified</NameIDFormat>``
+Add a 'Transform an Incoming Claim' that transforms 'UPN' into 'Name ID' in a 'Transient Identifier' Name ID format
 
 10. Exchange metadata with SAML (ADFS) Generated xml from mellon_create_metadata.sh to IdP and FederationMetadata.xml from IdP to you.
 
