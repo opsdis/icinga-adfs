@@ -17,7 +17,7 @@ Guide assumes Debian-based Linux
 
 > ``wget https://github.com/Uninett/mod_auth_mellon/blob/master/mellon_create_metadata.sh``
 
-> ``chmod +x mellon_create_metadata``
+> ``chmod +x mellon_create_metadata.sh``
 
 > ``mellon_create_metadata https://icinga2.example.com/icinga2 https://icinga2.example.com/mellon``
 
