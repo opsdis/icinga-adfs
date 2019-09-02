@@ -1,0 +1,23 @@
+# Ubuntu / Debian
+
+apt-get update
+apt-get install wget nano liblasso3 build-essential apache2-dev liblasso3-dev libcurl3-dev apache2
+cd /root
+wget https://github.com/Uninett/mod_auth_mellon/releases/download/v0.14.2/mod_auth_mellon-0.14.2.tar.gz
+tar xzvf mod_auth_mellon-0.14.2.tar.gz
+cd mod_auth_mellon-0.14.2/
+./configure
+make 
+make install
+
+
+# CentOS 7 
+yum update
+yum -y install lasso-devel.x86_64 install libcurl-devel.x86_64 httpd-devel nano wget autoconf automake gcc make httpd
+cd /root
+wget https://github.com/Uninett/mod_auth_mellon/releases/download/v0.14.2/mod_auth_mellon-0.14.2.tar.gz
+tar xzvf mod_auth_mellon-0.14.2.tar.gz
+cd mod_auth_mellon-0.14.2/
+./configure
+make 
+make install
