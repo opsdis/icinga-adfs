@@ -29,7 +29,11 @@ Guide assumes Debian-based Linux
 
 6. Place index.php in /var/www/html/login:
 
-> ``cp index.php /var/www/html/login/``
+> ``mkdir  /var/www/html/login/ /var/www/html/locallogin/``
+
+> ``cp index.php /var/www/html/login/index.php``
+
+> ``cp locallogin.php /var/www/html/locallogin/index.php``
 
 7. Place adfs.conf in /etc/apache2/sites-enabled/
 
