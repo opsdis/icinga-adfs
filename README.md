@@ -11,13 +11,13 @@ Guide assumes Debian-based Linux
 
 2. Create metadata for Icinga ServiceProvider with mellon_create_metadata.sh (https://icinga2.example.com/icinga2 is the SP IdentityID and full URL to MellonEndpointPath is used for https://icinga2.example.com/mellon):
 
-> ``wget https://github.com/Uninett/mod_auth_mellon/blob/master/mellon_create_metadata.sh``
+> ``wget https://raw.githubusercontent.com/Uninett/mod_auth_mellon/master/mellon_create_metadata.sh``
 
 > ``chmod +x mellon_create_metadata.sh``
 
-> ``mellon_create_metadata https://icinga2.example.com/icinga2 https://icinga2.example.com/mellon``
+> ``./mellon_create_metadata.sh https://icinga2.example.com/icinga2 https://icinga2.example.com/mellon``
 
-3. ADFS: Add following to SP metadata xml before the </SPSSODescriptor> tag
+3. ADFS: Add following to SP metadata xml before the `</SPSSODescriptor>` tag
 
 > ``<NameIDFormat>urn:oasis:names:tc:SAML:1.1:nameid-format:unspecified</NameIDFormat>``
 
@@ -61,5 +61,10 @@ Add a 'Transform an Incoming Claim' that transforms 'UPN' into 'Name ID' in a 'T
 
 > ``systemctl restart apache2``
 
+
+##### Additional steps:
+
+Create local users: sudo htpasswd -c /etc/icingaweb2/.http-users icingaadmin:
+https://icinga.com/docs/icingaweb2/latest/doc/05-Authentication/#example-configuration-for-apache-and-basic-authentication
 
 Reference: https://www.techsupportpk.com/2018/05/single-sign-on-apache-windows-adfs-rhel-centos.html
